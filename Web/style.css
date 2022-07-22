@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    margin: auto;
+    width: 100%;
+    background: #fff;
+}
+.title{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.image-ThongKe{
+    width: 49%;
+    float: left;
+}
