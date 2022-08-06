@@ -2,20 +2,21 @@ package poly.edu;
 
 
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
 
 import poly.edu.dao.NhanVienDAO;
 import poly.edu.entity.NhanVien;
 
-public class TestFormDíplayRule {
+public class TestFormDisplayRule {
 	private NhanVienDAO dao;
 	private NhanVien nhanVien;
 	//Tạp đối tượng 
-	@Before
+	@BeforeClass
 	public void setUpBeforeClass() throws Exception {
 		dao = new NhanVienDAO();
 		nhanVien = null;
@@ -25,15 +26,15 @@ public class TestFormDíplayRule {
 	public void test() {
 		//Kiểm tra vai trò nhân viên có id = 'NV01'
 		nhanVien = dao.selectByID("NV01");
-		assertEquals(nhanVien.getVaiTro(), false);
+		assertFalse(nhanVien.getVaiTro());
 	}
 	//Xoa các tham số chuyền vào
-	@After
+	@AfterClass
 	public void setUpAffterClass() throws Exception {
 		nhanVien = null;
 	}
 	//Tạp đối tượng 
-	@Before
+	@BeforeClass
 	public void setUpBeforeClass2() throws Exception {
 		dao = new NhanVienDAO();
 		nhanVien = null;
@@ -43,10 +44,10 @@ public class TestFormDíplayRule {
 	public void test2() {
 		//Kiểm tra vai trò trưởng phòng có id = 'NV04'
 		nhanVien = dao.selectByID("NV04");
-		assertEquals(nhanVien.getVaiTro(), true);
+		assertTrue(nhanVien.getVaiTro());
 	}
 	//Xoa các tham số chuyền vào
-	@After
+	@AfterClass
 	public void setUpAffterClass2() throws Exception {
 		nhanVien = null;
 	}
