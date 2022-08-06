@@ -263,8 +263,8 @@ private void dangNhap() {
                 this.dispose();
             }
         }
-
     }
+
 
     private boolean ValidatePass() {
         if (txtPass.getText().isEmpty()) {
